@@ -1,0 +1,10 @@
+[package]
+name = "bluetooth_toggle"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gtk = { version = "0.7", package = "gtk4" }
+glib = "0.18"
+zbus = "3.14"
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
