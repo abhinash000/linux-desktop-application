@@ -1,0 +1,19 @@
+[package]
+name = "bluetooth_toggle"     # The name of your Rust package/crate (your app's identifier)
+version = "0.1.0"             # Version of your app using Semantic Versioning (MAJOR.MINOR.PATCH)
+edition = "2021"              # Rust edition (language features and syntax). 2021 is latest and recommended.
+
+[dependencies]
+# GUI toolkit: GTK4 for building desktop interfaces (buttons, windows, etc.)
+gtk = { version = "0.7", package = "gtk4" }
+
+# Required for GTK apps – provides low-level types, async/event-loop support, and system integration
+glib = "0.18"
+
+# D-Bus client library – lets you talk to system services like Bluetooth, NetworkManager, etc.
+zbus = "3.14"
+
+# Asynchronous runtime needed for running zbus (D-Bus) operations
+# 'rt-multi-thread' enables multi-core async support
+# 'macros' allows use of #[tokio::main], #[tokio::test], etc.
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
